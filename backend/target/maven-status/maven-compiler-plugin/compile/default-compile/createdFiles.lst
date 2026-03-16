@@ -1,0 +1,6 @@
+com\example\portfolio\repository\PostRepository.class
+com\example\portfolio\config\CorsConfig.class
+com\example\portfolio\service\PostService.class
+com\example\portfolio\PortfolioBackendApplication.class
+com\example\portfolio\controller\PostController.class
+com\example\portfolio\model\Post.class

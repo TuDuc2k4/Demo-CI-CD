@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-header">
+    <div class="container">
+        <h1 class="logo">My Portfolio</h1>
+        <nav class="nav">
+            <a href="index.html" class="nav-link active">Home</a>
+            <a href="blog.html" class="nav-link">Blog</a>
+        </nav>
+    </div>
+</header>
+
+<main class="container">
+    <section class="hero">
+        <div class="hero-text">
+            <h2>Hello, I'm Đức Từ, a backend Java Developer</h2>
+            <p>
+                I build robust backend services with Spring Boot and intuitive frontends with modern web technologies.
+            </p>
+            <a href="blog.html" class="btn-primary">Visit My Blog</a>
+        </div>
+    </section>
+
+    <section class="section">
+        <h3>About Me</h3>
+        <p>
+            This portfolio showcases my projects, skills, and technical blog posts. The blog is powered by a custom
+            Spring Boot + MySQL backend and a lightweight Vanilla JavaScript frontend.
+        </p>
+    </section>
+
+    <section class="section">
+        <h3>Skills</h3>
+        <div class="skills-grid">
+            <div class="card">Java / Spring Boot</div>
+            <div class="card">REST APIs</div>
+            <div class="card">MySQL</div>
+            <div class="card">HTML5 &amp; CSS3</div>
+            <div class="card">JavaScript (ES6+)</div>
+            <div class="card">Docker</div>
+        </div>
+    </section>
+    
+    <section class="section">
+        <h3>Highlighted Project</h3>
+        <div class="card">
+            <h4>Portfolio &amp; Blog Platform</h4>
+            <p>
+                A full-stack web application with a Spring Boot backend and a responsive Vanilla JS frontend, featuring
+                a blog with CRUD operations.
+            </p>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <p>&copy; <span id="year"></span> My Portfolio. All rights reserved.</p>
+    </div>
+</footer>
+
+<script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
+
