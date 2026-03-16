@@ -1,0 +1,35 @@
+name: Deploy Spring Boot to Docker Hub
+
+# Chạy quy trình này mỗi khi có code mới được Push lên nhánh main
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build-and-push-image:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Robot 1: Lấy code từ GitHub về máy ảo
+      - name: 1. Checkout code
+        uses: actions/checkout@v4
+
+      # (Tùy chọn) Setup Buildx giúp build image tối ưu hơn
+      - name: Setup Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      # Robot 2: Đăng nhập vào Docker Hub bằng thông tin trong Secrets
+      - name: 2. Đăng nhập Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      # Robot 3: Đọc Dockerfile, đóng gói Image và đẩy lên Docker Hub
+      - name: 3. Build và Push Image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: true
+          # Thay 'ten-ung-dung-cua-ban' bằng tên bạn muốn đặt cho image
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/BTChieu2CongCu:latest
